@@ -10,10 +10,10 @@ import java.util.ArrayList;
 
 public class CustomListTest {
     private CustomList List;
+    City Edmonton=new City("Edmonton","AB");
     @Before
     public void createList(){
         List=new CustomList(null,new ArrayList<City>());
-        City Edmonton=new City("Edmonton","AB");
         List.addCity(Edmonton);
     }
     @Test
@@ -30,6 +30,8 @@ public class CustomListTest {
     }
     @Test
     public void deteleCity(){
-
+        List.deleteCity(Edmonton);
+        int ListSize=List.getCount();
+        assertEquals(0,ListSize);
     }
 }
